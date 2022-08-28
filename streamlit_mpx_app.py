@@ -60,7 +60,7 @@ map_data = pd.read_csv('map_data.csv.csv')
 
 case_input = st.slider('Filter', int(map_data['case count'].min()), int(map_data['case count'].max()) )
 
-case_filter = map_data['case count'] < price_input
-st.map(map_data.loc[case_filter, ['latitude', 'longitude']])
+case_filter = map_data['case count'] < case_input
+st.map(map_data.loc[case_filter, ['lat', 'long']])
 
 

@@ -23,9 +23,9 @@ st.write(
 Tweet Text
 ''')
 
-data = pd.read_csv('tweets.csv')
-data = data[['date', 'tweet']]
-st.dataframe(data)
+tweets = pd.read_csv('tweets.csv')
+tweets = tweets[['date', 'tweet']]
+st.dataframe(tweets)
 
 
 ## PART 4 - Graphing and Buttons
@@ -48,17 +48,19 @@ st.dataframe(data)
 #     st.pyplot(fig)
 #
 #
-## PART 5 - Mapping and Filtering Data
-#
-#st.write(
-#'''
-#Mapping and Filtering Data
-#'''
-#)
-#
-#price_input = st.slider('House Price Filter', int(data['PRICE'].min()), int(data['PRICE'].max()), 500000 )
-#
-#price_filter = data['PRICE'] < price_input
-#st.map(data.loc[price_filter, ['lat', 'lon']])
-#
-#
+# PART 5 - Mapping and Filtering Data
+
+st.write(
+'''
+Mapping and Filtering Data
+'''
+)
+
+map_data = pd.read_csv('map_data.csv.csv')
+
+case_input = st.slider('Filter', int(data['case count'].min()), int(data['PRICE'].max()), 500000 )
+
+case_filter = map_data['case count'] < price_input
+st.map(map_data.loc[case_filter, ['latitude', 'longitude']])
+
+

@@ -66,7 +66,7 @@ Mapping and Filtering Data
 data = pd.read_csv('map_data.csv')
 data = data.rename(columns={'latitude': 'lat', 'longitude': 'lon'})
 
-price_input = st.slider('Filter', int(data['case count'].min()), int(data['case count'].max()), 4000 )
+price_input = st.slider('Filter', int(data['case count'].min()), int(data['case count'].max()), 3500 )
 
 price_filter = data['case count'] < price_input
 st.map(data.loc[price_filter, ['lat', 'lon']])

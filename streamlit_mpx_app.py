@@ -56,11 +56,16 @@ Mapping and Filtering Data
 '''
 )
 
-map_data = pd.read_csv('map_data.csv')
+#map_data = pd.read_csv('map_data.csv')
+#
+#case_input = st.slider('Filter', int(map_data['cases'].min()), int(map_data['cases'].max()), 4000)
+#
+#case_filter = map_data['cases'] < case_input
+#st.map(map_data.loc[case_filter, ['lat', 'long']])
 
-case_input = st.slider('Filter', int(map_data['cases'].min()), int(map_data['cases'].max()), 4000)
+data = pd.read_csv('SeattleHomePrices.csv')
 
-case_filter = map_data['cases'] < case_input
-st.map(map_data.loc[case_filter, ['lat', 'long']])
+price_input = st.slider('House Price Filter', int(data['PRICE'].min()), int(data['PRICE'].max()), 500000 )
 
-
+price_filter = data['PRICE'] < price_input
+st.map(data.loc[price_filter, ['lat', 'lon']])

@@ -64,6 +64,7 @@ Mapping and Filtering Data
 #st.map(map_data.loc[case_filter, ['lat', 'long']])
 
 data = pd.read_csv('SeattleHomePrices.csv')
+data = data.rename(columns={'LATITUDE': 'lat', 'LONGITUDE': 'lon'})
 
 price_input = st.slider('House Price Filter', int(data['PRICE'].min()), int(data['PRICE'].max()), 500000 )
 

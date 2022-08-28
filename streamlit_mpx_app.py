@@ -56,11 +56,11 @@ Mapping and Filtering Data
 '''
 )
 
-map_data = pd.read_csv('map_data.csv.csv')
+map_data = pd.read_csv('map_data.csv')
 
-case_input = st.slider('Filter', int(map_data['case count'].min()), int(map_data['case count'].max()) )
+case_input = st.slider('Filter', int(map_data['cases'].min()), int(map_data['cases'].max()), 4000)
 
-case_filter = map_data['case count'] < case_input
+case_filter = map_data['cases'] < case_input
 st.map(map_data.loc[case_filter, ['lat', 'long']])
 
 

@@ -1,28 +1,13 @@
 """
 Streamlit Monkeypox Tweets MVP
-
 """
 
 import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 
-# We begin with Parts 3, 6, and 7, but uncomment the code in each of the other parts and save to see how the Streamlit application updates in your browser.
-
-
-## PART 1 - Agenda
-
 st.write('''
-# Welcome To Monkeypox Tweets Dashboard!
-#In this Streamlit app we will cover:
-##
-##- Markdown
-##- Importing data
-##- Displaying dataframes
-##- Graphing
-##- Interactivity with buttons
-##- Mapping
-##- Making predictions with user input
+# Monkeypox Tweets
 #''')
 #
 #
@@ -30,43 +15,19 @@ st.write('''
 #
 #st.write(
 #'''
-### Markdown Syntax
-#You can use Markdown syntax to style your text. For example,
 #
-## Main Title
-### Subtitle
-#### Header
+### PART 3 - Table
 #
-#**Bold Text**
-#
-#*Italics*
-#
-#Ordered List
-#
-#1. Apples
-#2. Oranges
-#3. Bananas
-#
-#[This is a link!](https://docs.streamlit.io/en/stable/getting_started.html)
-#
-#'''
-#)
-#
-#
-## PART 3 - Seattle House Prices Table
-
 st.write(
 '''
-## Seattle House Prices
-We can import data into our Streamlit app using pandas `read_csv` then display the resulting dataframe with `st.dataframe()`.
-
+Tweet Text
 ''')
 
-data = pd.read_csv('SeattleHomePrices.csv')
-data = data.rename(columns={'LATITUDE': 'lat', 'LONGITUDE': 'lon'})
+data = pd.read_csv('tweets.csv')
+data = data[['date', 'tweet']]
 st.dataframe(data)
 
-#
+
 ## PART 4 - Graphing and Buttons
 #
 #st.write(
@@ -91,9 +52,7 @@ st.dataframe(data)
 #
 #st.write(
 #'''
-### Mapping and Filtering Data
-#We can also use Streamlit's built in mapping functionality.
-#Furthermore, we can use a slider to filter for houses within a particular price range.
+#Mapping and Filtering Data
 #'''
 #)
 #
@@ -103,49 +62,3 @@ st.dataframe(data)
 #st.map(data.loc[price_filter, ['lat', 'lon']])
 #
 #
-## PART 6 - Linear Regression Model
-#
-#st.write(
-#'''
-### Train a Linear Regression Model
-#Now let's create a model to predict a house's price from its square footage and number of bedrooms.
-#'''
-#)
-#
-#from sklearn.linear_model import LinearRegression
-#from sklearn.model_selection import train_test_split
-#
-#clean_data = data.dropna(subset=['PRICE', 'SQUARE FEET', 'BEDS'])
-#
-#X = clean_data[['SQUARE FEET', 'BEDS']]
-#y = clean_data['PRICE']
-#
-#X_train, X_test, y_train, y_test = train_test_split(X, y)
-#
-### Warning: Using the above code, the R^2 value will continue changing in the app. Remember this file is run upon every update! Set the random_state if you want consistent R^2 results.
-#X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=42)
-#
-#lr = LinearRegression()
-#lr.fit(X_train, y_train)
-#
-#st.write(f'Test R²: {lr.score(X_test, y_test):.3f}')
-#
-#
-## PART 7 - Predictions from User Input
-#
-#st.write(
-#'''
-### Model Predictions
-#And finally, we can make predictions with our trained model from user input.
-#'''
-#)
-#
-#sqft = st.number_input('Square Footage of House', value=2000)
-#beds = st.number_input('Number of Bedrooms', value=3)
-#
-#input_data = pd.DataFrame({'sqft': [sqft], 'beds': [beds]})
-#pred = lr.predict(input_data)[0]
-#
-#st.write(
-#f'Predicted Sales Price of House: ${int(pred):,}'
-#)

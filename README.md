@@ -7,6 +7,6 @@
 * [MVP](https://github.com/slp22/data-engineering-project/blob/main/engineering_monkeypox_mvp.ipynb)
 * Slides
 * Summary
-* Pipeline
+* [Pipeline](https://github.com/slp22/data-engineering-project/blob/main/engineering_monkeypox_pipeline.ipynb)
 
 

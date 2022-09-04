@@ -39,5 +39,5 @@ st.title('Title')
 st.header('Header')
 st.subheader('Subheader')
 st.caption('This is a string that explains something above.')
-st.write(mpl_fig) : Displays a Matplotlib figure
+#st.write(mpl_fig) : Displays a Matplotlib figure
 

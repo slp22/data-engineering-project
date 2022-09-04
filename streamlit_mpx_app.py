@@ -34,5 +34,5 @@ price_input = st.slider('Filter', int(data['cases'].min()), int(data['cases'].ma
 
 price_filter = data['cases'] < price_input
 st.map(data.loc[price_filter, ['lat', 'lon']])
-st.markdown('Source: CDC 2022 U.S. Map & Case Count')
-st.markdown('https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html')
+st.markdown('[Source: CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html)')
+

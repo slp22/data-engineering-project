@@ -9,7 +9,8 @@ import streamlit as st
 st.write('''# Monkeypox Tweets''')
 
 st.write('''## Tweet Topics ''')
-st.table(topics_df)
+topics = pd.read_csv('topics_df.csv')
+
 
 
 

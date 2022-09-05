@@ -10,11 +10,6 @@ from wordcloud import WordCloud
 
 st.write('''# Monkeypox Tweets''')
 
-#st.write('''## Tweet Topics ''')
-#topics = pd.read_csv('topics_df.csv')
-#topics = topics[[]]
-
-
 
 st.write('''## Tweet Text''')
 
@@ -23,14 +18,13 @@ tweets = tweets[['date', 'text']]
 st.dataframe(tweets)
 
 
-
 st.write('''## Topic Word Cloud''')
 
 topic1 = 'emergency, global, pandemic, spreading, biden, cdc, said, risk, even, well, may, day, right, coming, could'
 topic2 = 'vaccine, smallpox, vaccines, cdc, shingles, day, well, im, yet, even, biden, moneypox, make, states, dont'
 topic3 = 'gay, men, sex, cnn, dont, spreading, stop, say, community, aids, right, cdc, see, pandemic, man'
 
-topic = st.selectbox('select topic',['risk','vaccine','gay men'])
+topic = st.selectbox('Select topic:',['risk','vaccine','gay men'])
 
 def create_wordcloud(topic):
     if topic == 'risk':
@@ -51,14 +45,11 @@ plt.axis("off")
 st.pyplot(fig)
 
 
-
-
-
 st.write('''## State Case Counts''')
 
 data = pd.read_csv('state_cases_for_map.csv')
 
-input = st.slider('Slide', int(data['cases'].min()),int(data['cases'].max()), 3500 )
+input = st.slider('Slide for state counts:', int(data['cases'].min()),int(data['cases'].max()), 3500 )
 
 filter = data['cases'] < input
 st.map(data.loc[filter, ['lat', 'lon']])

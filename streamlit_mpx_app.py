@@ -33,20 +33,37 @@ filter = data['cases'] < input
 st.map(data.loc[filter, ['lat', 'lon']])
 st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html)')
 
+
+
 st.write('''# cloud 1''')
 
+import streamlit as st
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
 
 # Create some sample text
-cloud = pd.read_csv('words_for_cloud.csv')
+text = 'Fun, fun, awesome, awesome, tubular, astounding, superb, great, amazing, amazing, amazing, amazing'
 
 # Create and generate a word cloud image:
-wordcloud = WordCloud().generate(cloud)
+wordcloud = WordCloud().generate(text)
 
 # Display the generated image:
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.show()
 st.pyplot()
+
+## Create some sample text
+#cloud = pd.read_csv('words_for_cloud.csv')
+#
+## Create and generate a word cloud image:
+#wordcloud = WordCloud().generate(cloud)
+#
+## Display the generated image:
+#plt.imshow(wordcloud, interpolation='bilinear')
+#plt.axis("off")
+#plt.show()
+#st.pyplot()
 
 
 st.write('''# cloud 2''')

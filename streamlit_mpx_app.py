@@ -19,8 +19,8 @@ st.write('''# Monkeypox Tweets''')
 st.write(
 '''## Tweet Text''')
 
-tweets = pd.read_csv('tweets.csv')
-tweets = tweets[['date', 'tweet']]
+tweets = pd.read_csv('tweets_2.csv')
+tweets = tweets[['date', 'text']]
 st.dataframe(tweets)
 
 st.write(

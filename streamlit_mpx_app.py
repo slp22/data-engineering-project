@@ -80,7 +80,7 @@ def create_wordcloud(topic):
 wordcloud_2 = create_wordcloud(topic)
 
 # Display the generated image:
-fig, ax = plt.plot(figsize = (12, 8))
+fig, ax = plt.subplots(figsize = (12, 8))
 ax.imshow(wordcloud_2)
 plt.axis("off")
 st.pyplot(fig)

@@ -43,12 +43,16 @@ cloud = pd.read_csv('words_for_cloud.csv')
 
 # Create and generate a word cloud image:
 wordcloud_1 = WordCloud().generate(cloud)
-#
+
+
 # Display the generated image:
 fig, ax = plt.plot(figsize = (12, 8))
-ax.imshow(wordcloud_1, interpolation='bilinear')
+ax.imshow(wordcloud_1) #, interpolation='bilinear')
 plt.axis("off")
 st.pyplot(fig)
+
+
+
 
 
 st.write('''# cloud 2''')
@@ -76,7 +80,7 @@ def create_wordcloud(topic):
 wordcloud_2 = create_wordcloud(topic)
 
 # Display the generated image:
-fig, ax = plt.subplots(figsize = (12, 8))
+fig, ax = plt.plot(figsize = (12, 8))
 ax.imshow(wordcloud_2)
 plt.axis("off")
 st.pyplot(fig)

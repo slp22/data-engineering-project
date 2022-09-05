@@ -36,20 +36,20 @@ st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvir
 
 
 
-st.write('''# cloud 1''')
-
-# text
-cloud = pd.read_csv('words_for_cloud.csv')
-
-# Create and generate a word cloud image:
-wordcloud_1 = WordCloud().generate(cloud)
-
-
-# Display the generated image:
-fig, ax = plt.plot(figsize = (12, 8))
-ax.imshow(wordcloud_1) #, interpolation='bilinear')
-plt.axis("off")
-st.pyplot(fig)
+#st.write('''# cloud 1''')
+#
+## text
+#cloud = pd.read_csv('words_for_cloud.csv')
+#
+## Create and generate a word cloud image:
+#wordcloud_1 = WordCloud().generate(cloud)
+#
+#
+## Display the generated image:
+#fig, ax = plt.plot(figsize = (12, 8))
+#ax.imshow(wordcloud_1) #, interpolation='bilinear')
+#plt.axis("off")
+#st.pyplot(fig)
 
 
 

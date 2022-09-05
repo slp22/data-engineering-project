@@ -53,12 +53,9 @@ st.write('''# cloud 2''')
 
 
 # Create text
-topic1 = 'emergency, global, pandemic, spreading, biden, cdc, said, risk, even, well, may, day, right, coming, could
-'
-topic2 = 'vaccine, smallpox, vaccines, cdc, shingles, day, well, im, yet, even, biden, moneypox, make, states, dont
-'
-topic3 = 'gay, men, sex, cnn, dont, spreading, stop, say, community, aids, right, cdc, see, pandemic, man
-'
+topic1 = 'emergency, global, pandemic, spreading, biden, cdc, said, risk, even, well, may, day, right, coming, could'
+topic2 = 'vaccine, smallpox, vaccines, cdc, shingles, day, well, im, yet, even, biden, moneypox, make, states, dont'
+topic3 = 'gay, men, sex, cnn, dont, spreading, stop, say, community, aids, right, cdc, see, pandemic, man'
 
 topic = st.selectbox('select topic',['topic1','topic2','topic3'])
 

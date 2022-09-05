@@ -36,7 +36,7 @@ st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvir
 
 
 # Create some sample text
-cloud = pd.read_csv('words_for_cloud.csv)
+cloud = pd.read_csv('words_for_cloud.csv')
 
 # Create and generate a word cloud image:
 wordcloud = WordCloud().generate(text)

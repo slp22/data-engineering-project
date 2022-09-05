@@ -16,19 +16,49 @@ st.write('''# Monkeypox Tweets''')
 
 
 
-st.write(
-'''## Tweet Text''')
+st.write('''## Tweet Text''')
 
 tweets = pd.read_csv('tweets_2.csv')
 tweets = tweets[['date', 'text']]
 st.dataframe(tweets)
 
-st.write(
-'''## State Case Counts''')
+
+
+st.write('''## Topic Word Cloud''')
+
+topic1 = 'emergency, global, pandemic, spreading, biden, cdc, said, risk, even, well, may, day, right, coming, could'
+topic2 = 'vaccine, smallpox, vaccines, cdc, shingles, day, well, im, yet, even, biden, moneypox, make, states, dont'
+topic3 = 'gay, men, sex, cnn, dont, spreading, stop, say, community, aids, right, cdc, see, pandemic, man'
+
+topic = st.selectbox('select topic',['risk','vaccine','gay men'])
+
+def create_wordcloud(topic):
+    if topic == 'risk':
+        topic = topic1
+    elif topic == 'vaccine':
+        topic = topic2
+    else:
+        topic = topic3
+
+    wordcloud = WordCloud().generate(topic)
+    return wordcloud
+
+wordcloud_2 = create_wordcloud(topic)
+
+fig, ax = plt.subplots(figsize = (12, 12))
+ax.imshow(wordcloud_2)
+plt.axis("off")
+st.pyplot(fig)
+
+
+
+
+
+st.write('''## State Case Counts''')
 
 data = pd.read_csv('state_cases_for_map.csv')
 
-input = st.slider('?', int(data['cases'].min()),int(data['cases'].max()), 3500 )
+input = st.slider('Slide', int(data['cases'].min()),int(data['cases'].max()), 3500 )
 
 filter = data['cases'] < input
 st.map(data.loc[filter, ['lat', 'lon']])
@@ -53,37 +83,6 @@ st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvir
 #
 #
 
-
-
-st.write('''# cloud 2''')
-
-
-# Create text
-topic1 = 'emergency, global, pandemic, spreading, biden, cdc, said, risk, even, well, may, day, right, coming, could'
-topic2 = 'vaccine, smallpox, vaccines, cdc, shingles, day, well, im, yet, even, biden, moneypox, make, states, dont'
-topic3 = 'gay, men, sex, cnn, dont, spreading, stop, say, community, aids, right, cdc, see, pandemic, man'
-
-topic = st.selectbox('select topic',['topic1','topic2','topic3'])
-
-# Create and generate a word cloud image:
-def create_wordcloud(topic):
-    if topic == 'topic1':
-        topic = topic1
-    elif topic == 'topic2':
-        topic = topic2
-    else:
-        topic = topic3
-
-    wordcloud = WordCloud().generate(topic)
-    return wordcloud
-
-wordcloud_2 = create_wordcloud(topic)
-
-# Display the generated image:
-fig, ax = plt.subplots(figsize = (12, 8))
-ax.imshow(wordcloud_2)
-plt.axis("off")
-st.pyplot(fig)
 
 
 

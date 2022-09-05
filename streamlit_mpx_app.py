@@ -1,16 +1,17 @@
 """
 Streamlit Monkeypox Tweets MVP
 """
-
-import matplotlib.pyplot as plt
-import pandas as pd
 import streamlit as st
+import pandas as pd
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+
 
 st.write('''# Monkeypox Tweets''')
 
-st.write('''## Tweet Topics ''')
-topics = pd.read_csv('topics_df.csv')
-
+#st.write('''## Tweet Topics ''')
+#topics = pd.read_csv('topics_df.csv')
+#topics = topics[[]]
 
 
 
@@ -34,25 +35,39 @@ st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvir
 
 
 
-st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
+# Create some sample text
+cloud = pd.read_csv('words_for_cloud.csv)
+
+# Create and generate a word cloud image:
+wordcloud = WordCloud().generate(text)
+
+# Display the generated image:
+plt.imshow(wordcloud, interpolation='bilinear')
+plt.axis("off")
+plt.show()
+st.pyplot()
 
 
-col1, col2, col3 = st.columns(3)
-col1.metric("Temperature", "70 °F", "1.2 °F")
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
 
-
-st.metric(label="Gas price", value=4, delta=-0.5,
-     delta_color="inverse")
-
-st.metric(label="Active developers", value=123, delta=123,
-     delta_color="off")
-     
-df = pd.DataFrame(
-    np.random.randn(10, 5),
-    columns=('col %d' % i for i in range(5)))
-
+#st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
+#
+#
+#col1, col2, col3 = st.columns(3)
+#col1.metric("Temperature", "70 °F", "1.2 °F")
+#col2.metric("Wind", "9 mph", "-8%")
+#col3.metric("Humidity", "86%", "4%")
+#
+#
+#st.metric(label="Gas price", value=4, delta=-0.5,
+#     delta_color="inverse")
+#
+#st.metric(label="Active developers", value=123, delta=123,
+#     delta_color="off")
+#
+#df = pd.DataFrame(
+#    np.random.randn(10, 5),
+#    columns=('col %d' % i for i in range(5)))
+#
 
 #st.write(mpl_fig) : Displays a Matplotlib figure
 

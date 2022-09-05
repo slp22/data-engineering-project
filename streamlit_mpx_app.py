@@ -51,7 +51,7 @@ wordcloud = WordCloud().generate(text)
 plt.imshow(wordcloud, interpolation='bilinear')
 plt.axis("off")
 plt.show()
-st.pyplot()
+st.pyplot(fig)
 
 ## Create some sample text
 #cloud = pd.read_csv('words_for_cloud.csv')

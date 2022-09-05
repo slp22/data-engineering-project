@@ -8,6 +8,11 @@ import streamlit as st
 
 st.write('''# Monkeypox Tweets''')
 
+st.write('''## Tweet Topics ''')
+st.table(topics_df)
+
+
+
 st.write(
 '''## Tweet Text''')
 
@@ -47,7 +52,6 @@ df = pd.DataFrame(
     np.random.randn(10, 5),
     columns=('col %d' % i for i in range(5)))
 
-st.table(df)
 
 #st.write(mpl_fig) : Displays a Matplotlib figure
 

@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
 
+
 st.write('''# Monkeypox Tweets''')
 
 #st.write('''## Tweet Topics ''')
@@ -37,33 +38,17 @@ st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvir
 
 st.write('''# cloud 1''')
 
-import streamlit as st
-from wordcloud import WordCloud
-import matplotlib.pyplot as plt
-
-# Create some sample text
-text = 'Fun, fun, awesome, awesome, tubular, astounding, superb, great, amazing, amazing, amazing, amazing'
+# text
+cloud = pd.read_csv('words_for_cloud.csv')
 
 # Create and generate a word cloud image:
-wordcloud = WordCloud().generate(text)
-
+wordcloud_1 = WordCloud().generate(cloud)
+#
 # Display the generated image:
-plt.imshow(wordcloud, interpolation='bilinear')
+fig, ax = plt.plot(figsize = (12, 8))
+ax.imshow(wordcloud_1, interpolation='bilinear')
 plt.axis("off")
-plt.show()
 st.pyplot(fig)
-
-## Create some sample text
-#cloud = pd.read_csv('words_for_cloud.csv')
-#
-## Create and generate a word cloud image:
-#wordcloud = WordCloud().generate(cloud)
-#
-## Display the generated image:
-#plt.imshow(wordcloud, interpolation='bilinear')
-#plt.axis("off")
-#plt.show()
-#st.pyplot()
 
 
 st.write('''# cloud 2''')
@@ -88,11 +73,11 @@ def create_wordcloud(topic):
     wordcloud = WordCloud().generate(topic)
     return wordcloud
 
-wordcloud = create_wordcloud(topic)
+wordcloud_2 = create_wordcloud(topic)
 
 # Display the generated image:
 fig, ax = plt.subplots(figsize = (12, 8))
-ax.imshow(wordcloud)
+ax.imshow(wordcloud_2)
 plt.axis("off")
 st.pyplot(fig)
 

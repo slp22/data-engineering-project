@@ -18,7 +18,7 @@ st.dataframe(tweets)
 st.write(
 '''## State Case Counts''')
 
-data = pd.read_csv('map_data.csv')
+data = pd.read_csv('state_cases_for_map.csv')
 
 input = st.slider('?', int(data['cases'].min()),int(data['cases'].max()), 3500 )
 

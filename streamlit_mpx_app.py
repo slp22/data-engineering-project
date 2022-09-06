@@ -10,9 +10,9 @@ from wordcloud import WordCloud
 
 st.title('Monkeypox Tweet Dashboard')
 
-st.expander('Expander')
-with st.expander('Expand'):
-    st.write('Juicy deets')
+# st.expander('Expander')
+# with st.expander('Expand'):
+#     st.write('Juicy deets')
 
 col1, col2, col3, col4 = st.columns(4)
 # ----Tweet Metrics----
@@ -23,7 +23,7 @@ with col1:
     st.metric(label="Handles", value="15,990")
 
 # ----Topic Word Cloud----
-with col1:
+# with col1:
     st.subheader("Topic Word Cloud")
 
     topic1 = 'emergency, global, spreading, cdc, biden, pandemic, said, risk, day, yet, even, may, could, government, coming, children, fear, foxnews, states, stop'

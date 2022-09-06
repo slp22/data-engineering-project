@@ -11,7 +11,7 @@ from wordcloud import WordCloud
 
 
 
-col1, col2, col3 = st.columns(3)
+col1, col2 = st.columns(2)
 
 # ----Topic Word Cloud----
 with col1:
@@ -79,10 +79,11 @@ with col1:
     st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html)')
 
 # ----Tweet Metrics----
-with col3:
+with col1:
     st.header("Tweet Metrics")
 
     st.metric(label="Tweets", value="197,594")
+with col2:
     st.metric(label="Handles", value="15,990")
 
     

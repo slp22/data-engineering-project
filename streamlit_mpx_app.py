@@ -25,7 +25,7 @@ with col1:
 
 # ----Topic Word Cloud----
 with col2:
-    st.write("## Topic Word Cloud")
+    st.write("### Topic Word Cloud")
 
     topic1 = 'emergency, global, spreading, cdc, biden, pandemic, said, risk, day, yet, even, may, could, government, coming, children, fear, foxnews, states, stop'
     topic2 = 'vaccine, smallpox, cdc, vaccines, shingles, yet, day, states, risk, everyone, vax, make, foxnews, biden, also, many, even, government, really, since'
@@ -65,14 +65,15 @@ def load_date_data():
 # st.write("#")
 with col2:
     st.write("#")
-    st.write("## Tweets by Date")
+    st.write("### Tweets by Date")
     date_data = load_date_data()
     date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])
     st.line_chart(date_df, x='date', y='tweets_per_day')
 
 # ----Tweet Text----
 with col1:
-    st.write("## Monkeypox Tweets")
+    st.write("#")
+    st.write("### Monkeypox Tweets")
     tweets = pd.read_csv('tweets.csv')
     tweets = tweets[['date', 'text']]
     st.dataframe(tweets)
@@ -80,7 +81,7 @@ with col1:
 
 # ----State Case Counts----
 with col3:
-    st.write("## State Case Counts")
+    st.write("### State Case Counts")
 
     data = pd.read_csv('state_cases_for_map.csv')
     input = st.slider('Slide for state counts:', int(data['cases'].min()),int(data['cases'].max()), 3500 )

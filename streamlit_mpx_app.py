@@ -24,37 +24,37 @@ with col1:
 
 # ----Topic Word Cloud----
 # with col1:
-    st.subheader("Topic Word Cloud")
+st.subheader("Topic Word Cloud")
 
-    topic1 = 'emergency, global, spreading, cdc, biden, pandemic, said, risk, day, yet, even, may, could, government, coming, children, fear, foxnews, states, stop'
-    topic2 = 'vaccine, smallpox, cdc, vaccines, shingles, yet, day, states, risk, everyone, vax, make, foxnews, biden, also, many, even, government, really, since'
-    topic3 = 'gay, men, sex, community, spreading, aids, cdc, stop, contact, man, children, month, risk, say, way, said, anyone, everyone, since, many'
-    topic4 = 'cnn, biden, trump, real, democrats, states, make, msnbc, good, years, man, please, said, since, day, never, let, right, say, even'
-    topic5 = 'dont, pandemic, see, moneypox, well, im, still, right, say, vaccines, even, thing, back, way, good, really, stop, biden, make, coming'
+topic1 = 'emergency, global, spreading, cdc, biden, pandemic, said, risk, day, yet, even, may, could, government, coming, children, fear, foxnews, states, stop'
+topic2 = 'vaccine, smallpox, cdc, vaccines, shingles, yet, day, states, risk, everyone, vax, make, foxnews, biden, also, many, even, government, really, since'
+topic3 = 'gay, men, sex, community, spreading, aids, cdc, stop, contact, man, children, month, risk, say, way, said, anyone, everyone, since, many'
+topic4 = 'cnn, biden, trump, real, democrats, states, make, msnbc, good, years, man, please, said, since, day, never, let, right, say, even'
+topic5 = 'dont, pandemic, see, moneypox, well, im, still, right, say, vaccines, even, thing, back, way, good, really, stop, biden, make, coming'
 
-    topic = st.selectbox('Select topic:',['risk','vaccine','gay men', 'news', 'mix'])
+topic = st.selectbox('Select topic:',['risk','vaccine','gay men', 'news', 'mix'])
 
-    def create_wordcloud(topic):
-        if topic == 'risk':
-            topic = topic1
-        elif topic == 'vaccine':
-            topic = topic2
-        elif topic == 'gay men':
-            topic = topic3
-        elif topic == 'news':
-            topic = topic4
-        else:
-            topic = topic5
+def create_wordcloud(topic):
+    if topic == 'risk':
+        topic = topic1
+    elif topic == 'vaccine':
+        topic = topic2
+    elif topic == 'gay men':
+        topic = topic3
+    elif topic == 'news':
+        topic = topic4
+    else:
+        topic = topic5
 
-        wordcloud = WordCloud().generate(topic)
-        return wordcloud
+    wordcloud = WordCloud().generate(topic)
+    return wordcloud
 
-    wordcloud = create_wordcloud(topic)
+wordcloud = create_wordcloud(topic)
 
-    fig, ax = plt.subplots(figsize = (12, 12))
-    ax.imshow(wordcloud)
-    plt.axis("off")
-    st.pyplot(fig)
+fig, ax = plt.subplots(figsize = (12, 12))
+ax.imshow(wordcloud)
+plt.axis("off")
+st.pyplot(fig)
 
 # ----Tweets by Date----
 @st.cache

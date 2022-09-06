@@ -6,8 +6,8 @@
 # import matplotlib.pyplot as plt
 # from wordcloud import WordCloud
 
-# st.set_page_config(layout="wide")
-# st.markdown("<h1 style='text-align: center; color: #1DA1F2;'>Monkeypox Tweet Dashboard</h1>", unsafe_allow_html=True)
+st.set_page_config(layout="wide")
+st.markdown("<h1 style='text-align: center; color: #1DA1F2;'>Monkeypox Tweet Dashboard</h1>", unsafe_allow_html=True)
 # st.write("#")
 
 

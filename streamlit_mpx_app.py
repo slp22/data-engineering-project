@@ -47,35 +47,35 @@ with col1:
     st.pyplot(fig)
 
 
+# ----Tweet Text----
+with col2:
+    st.header("Monkeypox Tweets")
+
+    tweets = pd.read_csv('tweets.csv')
+    tweets = tweets[['date', 'text']]
+    st.dataframe(tweets)
+
+
+# ----State Case Counts----
+with col1:
+    st.header("State Case Counts")
+
+    data = pd.read_csv('state_cases_for_map.csv')
+    input = st.slider('Slide for state counts:', int(data['cases'].min()),int(data['cases'].max()), 3500 )
+    filter = data['cases'] < input
+    st.map(data.loc[filter, ['lat', 'lon']])
+    st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html)')
+
 # ----Tweets by Date----
 with col2:
     st.header("Tweets by Date")
     
-# st.write('''## Tweets by Date''')
-
     chart_data = pd.read_csv('date_df.csv')
+    chart_data = pd.DataFrame(chart_data)
     # chart_data = pd.DataFrame(
     #      np.random.randn(20, 3),
     #      columns=['a', 'b', 'c'])
     st.line_chart(chart_data)
-
-
-# ----Tweet Text----
-st.write('''# Monkeypox Tweets''')
-
-tweets = pd.read_csv('tweets.csv')
-tweets = tweets[['date', 'text']]
-st.dataframe(tweets)
-
-
-# ----State Case Counts----
-st.write('''## State Case Counts''')
-
-data = pd.read_csv('state_cases_for_map.csv')
-input = st.slider('Slide for state counts:', int(data['cases'].min()),int(data['cases'].max()), 3500 )
-filter = data['cases'] < input
-st.map(data.loc[filter, ['lat', 'lon']])
-st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html)')
 
 
 

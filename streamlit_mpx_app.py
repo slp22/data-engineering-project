@@ -6,6 +6,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
+st.set_page_config(layout="wide")
 
 
 st.title('Monkeypox Tweet Dashboard')
@@ -70,7 +71,7 @@ with col2:
 
 # ----Tweet Text----
 # with col1:
-st.sidebar.markdown("## Monkeypox Tweets")
+st.subheader("Monkeypox Tweets")
 tweets = pd.read_csv('tweets.csv')
 tweets = tweets[['date', 'text']]
 st.dataframe(tweets)

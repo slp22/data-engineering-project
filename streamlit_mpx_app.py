@@ -11,7 +11,7 @@
 # st.write("#")
 
 
-# col1, col2, col3 = st.columns([1, 2, 2], gap="medium")
+col1, col2, col3 = st.columns([1, 2, 2], gap="medium")
 # ----Tweet Metrics----
 # with col1:
 #     # st.header("Tweet Metrics")

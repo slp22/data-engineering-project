@@ -11,7 +11,7 @@ st.markdown("<h1 style='text-align: center; color: #1DA1F2;'>Monkeypox Tweet Das
 st.write("#")
 
 
-col1, col2, col3, col4 = st.columns(4, gap="large")
+col1, col2, col3 = st.columns(1, 2, 3, gap="medium")
 # ----Tweet Metrics----
 with col1:
     # st.header("Tweet Metrics")

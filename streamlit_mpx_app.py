@@ -20,7 +20,7 @@ with col1:
     st.metric(label="Handles", value="15,990")
 
 # ----Topic Word Cloud----
-with col2:
+with col1:
     st.subheader("Topic Word Cloud")
 
     topic1 = 'emergency, global, spreading, cdc, biden, pandemic, said, risk, day, yet, even, may, could, government, coming, children, fear, foxnews, states, stop'

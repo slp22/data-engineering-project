@@ -12,6 +12,12 @@ from wordcloud import WordCloud
 
 
 col1, col2 = st.columns(2)
+# ----Tweet Metrics----
+with col1:
+    # st.header("Tweet Metrics")
+    st.metric(label="Tweets", value="197,594")
+with col2:
+    st.metric(label="Handles", value="15,990")
 
 # ----Topic Word Cloud----
 with col1:
@@ -60,7 +66,7 @@ with col2:
     st.line_chart(date_df, x='date', y='tweets_per_day')
 
 # ----Tweet Text----
-with col2:
+with col1:
     st.header("Monkeypox Tweets")
 
     tweets = pd.read_csv('tweets.csv')
@@ -69,7 +75,7 @@ with col2:
 
 
 # ----State Case Counts----
-with col1:
+with col2:
     st.header("State Case Counts")
 
     data = pd.read_csv('state_cases_for_map.csv')
@@ -77,15 +83,4 @@ with col1:
     filter = data['cases'] < input
     st.map(data.loc[filter, ['lat', 'lon']])
     st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html)')
-
-# ----Tweet Metrics----
-with col1:
-    st.header("Tweet Metrics")
-
-    st.metric(label="Tweets", value="197,594")
-with col2:
-    st.metric(label="Handles", value="15,990")
-
     
-
-

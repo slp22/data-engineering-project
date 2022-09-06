@@ -9,11 +9,11 @@ from wordcloud import WordCloud
 
 
 @st.cache
-def load_date_data(nrows):
-    data = pd.read_csv('date_df.csv',nrows=nrows)
+def load_date_data():
+    data = pd.read_csv('date_df.csv')
     return data
-data_data = load_date_data()
-date_df = pd.DataFrame(date_data[:], columns = ['date', 'tweets_per_day'])
+date_data = load_date_data()
+date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])
 st.line_chart(date_df)
 
 

@@ -8,19 +8,19 @@ from wordcloud import WordCloud
 
 
 
+st.title('Monkeypox Tweet Dashboard')
 
 
-
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns(3)
 # ----Tweet Metrics----
 with col1:
     # st.header("Tweet Metrics")
     st.metric(label="Tweets", value="197,594")
-with col2:
+with col1:
     st.metric(label="Handles", value="15,990")
 
 # ----Topic Word Cloud----
-with col1:
+with col2:
     st.subheader("Topic Word Cloud")
 
     topic1 = 'emergency, global, spreading, cdc, biden, pandemic, said, risk, day, yet, even, may, could, government, coming, children, fear, foxnews, states, stop'
@@ -66,7 +66,7 @@ with col2:
     st.line_chart(date_df, x='date', y='tweets_per_day')
 
 # ----Tweet Text----
-with col1:
+with col3:
     st.subheader("Monkeypox Tweets")
 
     tweets = pd.read_csv('tweets.csv')
@@ -75,7 +75,7 @@ with col1:
 
 
 # ----State Case Counts----
-with col2:
+with col3:
     st.subheader("State Case Counts")
 
     data = pd.read_csv('state_cases_for_map.csv')

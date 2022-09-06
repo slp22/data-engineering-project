@@ -12,8 +12,8 @@ from wordcloud import WordCloud
 def load_date_data(nrows):
     data = pd.read_csv('date_df.csv',nrows=nrows)
     return data
-data_data = load_date_data(nrows)
-date_df = pd.DataFrame(date_data[:200], columns = ['date', 'tweets_per_day'])
+data_data = load_date_data()
+date_df = pd.DataFrame(date_data[:], columns = ['date', 'tweets_per_day'])
 st.line_chart(date_df)
 
 

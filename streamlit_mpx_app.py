@@ -15,7 +15,7 @@ col1, col2, col3 = st.columns([1, 2, 2], gap="medium")
 # ----Tweet Metrics----
 with col1:
     # st.header("Tweet Metrics")
-    st.metric(label="Tweets", value="197,594")
+    st.metric(label="Tweets", value="28,498")
 with col1:
     st.metric(label="Handles", value="15,990")
 

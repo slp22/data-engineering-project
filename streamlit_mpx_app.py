@@ -21,7 +21,7 @@ with col2:
 
 # ----Topic Word Cloud----
 with col1:
-    st.header("Topic Word Cloud")
+    st.subheader("Topic Word Cloud")
 
     topic1 = 'emergency, global, spreading, cdc, biden, pandemic, said, risk, day, yet, even, may, could, government, coming, children, fear, foxnews, states, stop'
     topic2 = 'vaccine, smallpox, cdc, vaccines, shingles, yet, day, states, risk, everyone, vax, make, foxnews, biden, also, many, even, government, really, since'
@@ -60,14 +60,14 @@ def load_date_data():
     return data
 
 with col2:
-    st.header("Tweets by Date")
+    st.subheader("Tweets by Date")
     date_data = load_date_data()
     date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])
     st.line_chart(date_df, x='date', y='tweets_per_day')
 
 # ----Tweet Text----
 with col1:
-    st.header("Monkeypox Tweets")
+    st.subheader("Monkeypox Tweets")
 
     tweets = pd.read_csv('tweets.csv')
     tweets = tweets[['date', 'text']]
@@ -76,11 +76,10 @@ with col1:
 
 # ----State Case Counts----
 with col2:
-    st.header("State Case Counts")
+    st.subheader("State Case Counts")
 
     data = pd.read_csv('state_cases_for_map.csv')
     input = st.slider('Slide for state counts:', int(data['cases'].min()),int(data['cases'].max()), 3500 )
     filter = data['cases'] < input
     st.map(data.loc[filter, ['lat', 'lon']])
     st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html)')
-    

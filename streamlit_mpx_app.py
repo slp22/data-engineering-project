@@ -14,7 +14,7 @@ def load_date_data():
     return data
 date_data = load_date_data()
 date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])
-st.line_chart(date_df)
+st.line_chart(date_df, y='tweets_per_day')
 
 
 

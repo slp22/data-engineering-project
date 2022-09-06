@@ -62,7 +62,7 @@ with col2:
 def load_date_data():
     data = pd.read_csv('date_df.csv')
     return data
-
+st.write("##")
 with col2:
     st.write("## Tweets by Date")
     date_data = load_date_data()

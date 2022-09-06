@@ -69,12 +69,11 @@ with col2:
     st.line_chart(date_df, x='date', y='tweets_per_day')
 
 # ----Tweet Text----
-with col1:
-    st.subheader("Monkeypox Tweets")
-
-    tweets = pd.read_csv('tweets.csv')
-    tweets = tweets[['date', 'text']]
-    st.dataframe(tweets)
+# with col1:
+st.sidebar.markdown("##Monkeypox Tweets")
+tweets = pd.read_csv('tweets.csv')
+tweets = tweets[['date', 'text']]
+st.dataframe(tweets)
 
 
 # ----State Case Counts----

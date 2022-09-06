@@ -8,15 +8,10 @@ from wordcloud import WordCloud
 
 st.set_page_config(layout="wide")
 st.markdown("<h1 style='text-align: center; color: #1DA1F2;'>Monkeypox Tweet Dashboard</h1>", unsafe_allow_html=True)
+st.write("#")
 
 
-# st.title('Monkeypox Tweet Dashboard')
-
-# st.expander('Expander')
-# with st.expander('Expand'):
-#     st.write('Juicy deets')
-
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4 = st.columns(4, gap="medium")
 # ----Tweet Metrics----
 with col1:
     # st.header("Tweet Metrics")

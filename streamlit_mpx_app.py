@@ -10,6 +10,9 @@ from wordcloud import WordCloud
 
 st.title('Monkeypox Tweet Dashboard')
 
+st.expander('Expander')
+with st.expander('Expand'):
+    st.write('Juicy deets')
 
 col1, col2, col3, col4 = st.columns(4)
 # ----Tweet Metrics----

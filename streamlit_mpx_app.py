@@ -25,15 +25,15 @@ with col1:
 
 # ----Topic Word Cloud----
 with col2:
-    st.subheader("Topic Word Cloud")
+    st.write("## Topic Word Cloud")
 
     topic1 = 'emergency, global, spreading, cdc, biden, pandemic, said, risk, day, yet, even, may, could, government, coming, children, fear, foxnews, states, stop'
     topic2 = 'vaccine, smallpox, cdc, vaccines, shingles, yet, day, states, risk, everyone, vax, make, foxnews, biden, also, many, even, government, really, since'
     topic3 = 'gay, men, sex, community, spreading, aids, cdc, stop, contact, man, children, month, risk, say, way, said, anyone, everyone, since, many'
     topic4 = 'cnn, biden, trump, real, democrats, states, make, msnbc, good, years, man, please, said, since, day, never, let, right, say, even'
     topic5 = 'dont, pandemic, see, moneypox, well, im, still, right, say, vaccines, even, thing, back, way, good, really, stop, biden, make, coming'
-
-    topic = st.selectbox('Select topic:',['risk','vaccine','gay men', 'news', 'mix'])
+    
+    topic = st.selectbox('Select a topic:',['risk','vaccine','gay men', 'news', 'mix'])
 
     def create_wordcloud(topic):
         if topic == 'risk':

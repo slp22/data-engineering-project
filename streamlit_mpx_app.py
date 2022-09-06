@@ -70,7 +70,7 @@ with col2:
 
 # ----Tweet Text----
 # with col1:
-st.sidebar.markdown("##Monkeypox Tweets")
+st.sidebar.markdown("## Monkeypox Tweets")
 tweets = pd.read_csv('tweets.csv')
 tweets = tweets[['date', 'text']]
 st.dataframe(tweets)

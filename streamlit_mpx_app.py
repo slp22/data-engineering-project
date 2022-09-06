@@ -11,7 +11,7 @@ from wordcloud import WordCloud
 st.title('Monkeypox Tweet Dashboard')
 
 
-col1, col2, col3 = st.columns(3)
+col1, col2, col3, col4 = st.columns(4)
 # ----Tweet Metrics----
 with col1:
     # st.header("Tweet Metrics")
@@ -75,7 +75,7 @@ with col2:
 
 
 # ----State Case Counts----
-with col3:
+with col4:
     st.subheader("State Case Counts")
 
     data = pd.read_csv('state_cases_for_map.csv')

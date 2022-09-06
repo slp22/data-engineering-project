@@ -13,11 +13,11 @@ st.write("#")
 
 col1, col2, col3 = st.columns([1, 2, 2], gap="medium")
 # ----Tweet Metrics----
-with col1:
-    # st.header("Tweet Metrics")
-    st.metric(label="Tweets", value="28,498")
-with col1:
-    st.metric(label="Handles", value="15,990")
+# with col1:
+#     # st.header("Tweet Metrics")
+#     st.metric(label="Tweets", value="28,498")
+# with col1:
+#     st.metric(label="Handles", value="15,990")
 
 # ----Topic Word Cloud----
 with col2:
@@ -53,35 +53,35 @@ with col2:
     plt.axis("off")
     st.pyplot(fig)
 
-# ----Tweets by Date----
-@st.cache
-def load_date_data():
-    data = pd.read_csv('date_df.csv')
-    return data
-# st.write("#")
-with col2:
-    st.write("#")
-    st.write("### Tweets by Date")
-    date_data = load_date_data()
-    date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])
-    st.line_chart(date_df, x='date', y='tweets_per_day')
+# # ----Tweets by Date----
+# @st.cache
+# def load_date_data():
+#     data = pd.read_csv('date_df.csv')
+#     return data
+# # st.write("#")
+# with col2:
+#     st.write("#")
+#     st.write("### Tweets by Date")
+#     date_data = load_date_data()
+#     date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])
+#     st.line_chart(date_df, x='date', y='tweets_per_day')
 
 
-# ----Tweet Text----
-with col1:
-    st.write("#")
-    st.write("### Monkeypox Tweets")
-    tweets = pd.read_csv('tweets.csv')
-    tweets = tweets[['date', 'text']]
-    st.dataframe(tweets)
-    st.markdown('Source: [Kaggle](https://www.kaggle.com/datasets/thakurnirmalya/monkeypox2022tweets)')
+# # ----Tweet Text----
+# with col1:
+#     st.write("#")
+#     st.write("### Monkeypox Tweets")
+#     tweets = pd.read_csv('tweets.csv')
+#     tweets = tweets[['date', 'text']]
+#     st.dataframe(tweets)
+#     st.markdown('Source: [Kaggle](https://www.kaggle.com/datasets/thakurnirmalya/monkeypox2022tweets)')
 
-# ----State Case Counts----
-with col3:
-    st.write("### State Case Counts")
+# # ----State Case Counts----
+# with col3:
+#     st.write("### State Case Counts")
 
-    data = pd.read_csv('state_cases_for_map.csv')
-    input = st.slider('Slide for state counts:', int(data['cases'].min()),int(data['cases'].max()), 3500 )
-    filter = data['cases'] < input
-    st.map(data.loc[filter, ['lat', 'lon']])
-    st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html)')
+#     data = pd.read_csv('state_cases_for_map.csv')
+#     input = st.slider('Slide for state counts:', int(data['cases'].min()),int(data['cases'].max()), 3500 )
+#     filter = data['cases'] < input
+#     st.map(data.loc[filter, ['lat', 'lon']])
+#     st.markdown('Source: [CDC 2022 U.S. Map & Case Count](https://www.cdc.gov/poxvirus/monkeypox/response/2022/index.html)')

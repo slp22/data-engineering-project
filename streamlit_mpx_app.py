@@ -62,8 +62,9 @@ with col2:
 def load_date_data():
     data = pd.read_csv('date_df.csv')
     return data
-st.write("##")
+# st.write("#")
 with col2:
+    st.write("#")
     st.write("## Tweets by Date")
     date_data = load_date_data()
     date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])

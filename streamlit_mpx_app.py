@@ -59,14 +59,14 @@ def load_date_data():
     data = pd.read_csv('date_df.csv')
     return data
 
-with col2:
+with col3:
     st.subheader("Tweets by Date")
     date_data = load_date_data()
     date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])
     st.line_chart(date_df, x='date', y='tweets_per_day')
 
 # ----Tweet Text----
-with col3:
+with col2:
     st.subheader("Monkeypox Tweets")
 
     tweets = pd.read_csv('tweets.csv')

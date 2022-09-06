@@ -8,6 +8,16 @@ from wordcloud import WordCloud
 
 
 
+@st.cache
+def load_date_data(nrows):
+    data = pd.read_csv('date_df.csv',nrows=nrows)
+    return data
+data_data = load_date_data()
+date_df = pd.DataFrame(date_data[:200], columns = ['date', 'tweets_per_day'])
+st.line_chart(date_df)
+
+
+
 col1, col2 = st.columns(2)
 
 
@@ -70,12 +80,7 @@ with col1:
 with col2:
     st.header("Tweets by Date")
     
-    chart_data = pd.read_csv('date_df.csv')
-    chart_data = pd.DataFrame(chart_data)
-    # chart_data = pd.DataFrame(
-    #      np.random.randn(20, 3),
-    #      columns=['a', 'b', 'c'])
-    st.line_chart(chart_data)
+
 
 
 

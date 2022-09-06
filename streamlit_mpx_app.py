@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
 st.set_page_config(layout="wide")
-st.markdown("<h1 style='text-align: center; color: powderblue;'>Monkeypox Tweet Dashboard</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: lightblue;'>Monkeypox Tweet Dashboard</h1>", unsafe_allow_html=True)
 
 
 # st.title('Monkeypox Tweet Dashboard')

@@ -69,7 +69,6 @@ with col2:
     date_data = load_date_data()
     date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])
     st.line_chart(date_df, x='date', y='tweets_per_day')
-    st.markdown('Source: [Kaggle](https://www.kaggle.com/datasets/thakurnirmalya/monkeypox2022tweets)')
 
 
 # ----Tweet Text----
@@ -79,7 +78,7 @@ with col1:
     tweets = pd.read_csv('tweets.csv')
     tweets = tweets[['date', 'text']]
     st.dataframe(tweets)
-
+    st.markdown('Source: [Kaggle](https://www.kaggle.com/datasets/thakurnirmalya/monkeypox2022tweets)')
 
 # ----State Case Counts----
 with col3:

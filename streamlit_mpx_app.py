@@ -69,6 +69,8 @@ with col2:
     date_data = load_date_data()
     date_df = pd.DataFrame(date_data, columns = ['date', 'tweets_per_day'])
     st.line_chart(date_df, x='date', y='tweets_per_day')
+    st.markdown('Source: [Kaggle](https://www.kaggle.com/datasets/thakurnirmalya/monkeypox2022tweets)')
+
 
 # ----Tweet Text----
 with col1:
